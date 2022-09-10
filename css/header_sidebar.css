@@ -4,7 +4,6 @@
 	transition-duration: 0.3s;
 }
 
-
 .grid-container {
 	display: grid;
 	grid-template-columns: 18% 82%;

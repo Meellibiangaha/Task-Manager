@@ -213,8 +213,8 @@ input[type="text"], .text-field__input {
 /*task_modal*/
 
 .task_modal__inner {
-	background: #2c2c36;
-	color: #fff;
+	background: #fff;
+	color: #000;
 }
 
 .description_inf{
@@ -228,9 +228,9 @@ input[type="text"], .text-field__input {
 	color: #72707b;
 }
 .modal_task_status_select{
-	background-color: #2c2c36;
+	background-color: #fff;
 	border: 1px solid #6b6f81;
-	color: #FFF;
+	color: #000;
 }
 .modal_task_status_select:focus{
   border-color: #5f5b7c;
