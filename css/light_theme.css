@@ -1,0 +1,252 @@
+/*header*/
+
+.sidebar{
+	background: #ededed;
+	border-right: 2px solid #d3d1d1;
+}
+
+.top{
+	background: #ededed;
+	border-bottom: 2px solid #d3d1d1;
+}
+
+.addTask{
+	color: #fff;
+	background: #0081ff;
+}
+.addTask:hover{
+	background: #0060bf;
+}
+
+.top_svg{
+	fill: #000;
+}
+.top_svg:hover{
+	fill: #0081ff;
+}
+
+/*sidebar*/
+.sidebar_img{
+	border: 2px solid #635ecb;
+}
+.sidebar_img:hover{
+	border-color: #FF8C00;
+}
+.sidebar_papka_maxheigth::-webkit-scrollbar {
+	background-color: rgb(79, 79, 105, 0.2);
+}
+.sidebar_papka_maxheigth::-webkit-scrollbar-thumb {
+  background-color: rgb(11, 103, 193, 0.5);
+}
+.boards_wrapper{
+	color: #000;
+}
+.board_box:hover{
+	color: #fff;
+	background: #0081ff;
+}
+.board_box_active{
+	color: #fff;
+	background: #0081ff;
+}
+.sidebar_papka_svg{
+	fill: #0081ff
+}
+
+.sidebar_papka_svg_active{
+	fill: #fff;
+}
+.board_box:hover .sidebar_papka_svg{
+	fill: #fff;
+}
+
+/*createPapka*/
+.box_createPapka{
+	color: #026bd1;
+}
+
+.box_createPapka:hover{
+	color: #fff;
+	background: #026bd1;
+}
+.box_createPapka:hover .sidebar_createPapka_svg{
+	fill: #fff;
+}
+.sidebar_createPapka_svg{
+	fill: #026bd1;
+}
+
+.sidebar_toggle_box{
+	background: #0060bf;
+}
+
+.sidebar_toggle_svg{
+	fill: #fff;
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #56abff;
+}
+
+/*view_sidebar*/
+
+.viewSidebar_box{
+	color: #6b6f81;
+}
+
+.sidebar_viewSidebar_svg{
+	fill: #6b6f81;
+}
+
+.viewSidebar_box:hover{
+	color: #000;
+}
+.viewSidebar_box:hover .sidebar_viewSidebar_svg{
+	fill: #000;
+}
+
+/*main*/
+
+body{
+	color: rgb(0, 0, 0, 0.8);
+	background: #f5f5f5;
+}
+
+.selected_flex_task_columns{
+	border: 1px solid rgba(251, 206, 177, 0.5);
+}
+
+.flex_task_inColumn::-webkit-scrollbar {
+	background-color: rgb(79, 79, 105, 0.2);
+}
+.flex_task_inColumn::-webkit-scrollbar-thumb {
+  background-color: rgb(99, 98, 172, 0.5);
+}
+
+.task_name_wrapper{
+	color: #4a4a4a;
+}
+.Todo{
+	background: #FA8072;
+}
+.Doing{
+	background: #20B2AA;
+}
+.Done{
+	background: #483D8B;
+}
+
+.task{
+	background: #fff;
+	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.task:hover{
+	border: 1px solid #1FAEE9;
+}
+
+.selected{
+	border: 1px solid #1FAEE9;
+}
+
+.sub_task_text{
+	color: #5c6074;
+}
+.modal__inner {
+	background: #fff;
+	color: #000;
+}
+
+/* стили для input */
+input[type="text"], .text-field__input {
+	color: rgb(0, 0, 0, 0.9);
+	border: 1px solid #6b6f81;
+}
+
+.addNewSubtask{
+	background: #818898;
+	color: #fff;
+}
+.addNewSubtask:hover{
+	color: #fff;
+	background: #0081ff;
+}
+
+/*subtasks*/
+
+.subtasks__input {
+	background-color: transparent;
+	color: rgb(0, 0, 0, 0.9);
+	border: 1px solid #6b6f81;
+}
+
+.cls-1{
+	stroke: #7c8695;
+}
+
+/*task status*/
+
+.task_status_select{
+	background-color: #fff;
+	border: 1px solid #6b6f81;
+	color: #000;
+}
+
+.task_status_select:focus{
+   border-color: #5f5b7c;
+}
+.task_status option{
+	border-bottom: 1px solid #6b6f81;;
+	background: #fff;
+	color: #000;
+}
+
+.CreateTask{
+	background: #0060bf;
+	color: #fff;
+}
+
+.CreateTask:hover{
+	color: #fff;
+	background: #004FBF;
+}
+
+/*task_modal*/
+
+.task_modal__inner {
+	background: #2c2c36;
+	color: #fff;
+}
+
+.description_inf{
+	color: #696e7d;
+}
+
+.subTasks_inf_box{
+	background: #21212d;
+}
+.my-checkbox:checked + label{
+	color: #72707b;
+}
+.modal_task_status_select{
+	background-color: #2c2c36;
+	border: 1px solid #6b6f81;
+	color: #FFF;
+}
+.modal_task_status_select:focus{
+  border-color: #5f5b7c;
+}
+
+/*board Modal*/
+
+.board_modal__inner {
+	background: #fff;
+	color: #000;
+}
+.createNewBoard{
+	background: #0081ff;
+	color: #fff;
+}
+.createNewBoard:hover{
+	color: #fff;
+	background: #0060bf;
+}
