@@ -4,7 +4,7 @@
 	transition-duration: 0.3s;
 }
 
-.grid-container {
+.grid-container_openSidebar {
 	display: grid;
 	grid-template-columns: 18% 82%;
 	grid-template-rows: 100px;
@@ -12,6 +12,15 @@
 											 "post-2 post-3";
 
 }
+.grid-container_closeSidebar {
+	display: grid;
+	grid-template-columns: 4% 96%;
+	grid-template-rows: 100px;
+	grid-template-areas: "post-2 post-1"  
+											 "post-2 post-3";
+
+}
+
 .grid_box1 {
 	display: grid;
 	grid-area: post-1;

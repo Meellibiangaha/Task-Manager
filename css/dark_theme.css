@@ -244,3 +244,10 @@ input[type="text"], .text-field__input {
 	color: #fff;
 	background: #4543d3;
 }
+
+
+/*delete task*/
+.taskInstrumental{
+	background-color: #353541;
+  color: #fff;
+}

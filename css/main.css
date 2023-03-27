@@ -346,10 +346,11 @@ input[type="text"], .text-field__input {
 /*task_modal*/
 
 .task_modal__body {
-	overflow-y: auto;
+	/*overflow-y: auto;*/
 	position: relative;
 	margin: 0 24px;
 	max-height: 100%;
+	width: 480px;
 	max-width: 480px;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
@@ -383,16 +384,7 @@ input[type="text"], .text-field__input {
 	width: 100%;
 	height: 100%;
 }
-.task_modal__body {
-	overflow-y: auto;
-	position: relative;
-	margin: 0 24px;
-	max-height: 100%;
-	width: 480px;
-	max-width: 480px;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
+
 .task_modal__body::-webkit-scrollbar {
 	display: none;
 }
@@ -404,7 +396,7 @@ input[type="text"], .text-field__input {
 	padding: 25px 34px 14px;
 	border-radius: 10px;
 	position: relative;
-	margin: 24px 0;
+	margin: 24px 0px;
 }
 
 .task_modal__text {
@@ -481,22 +473,78 @@ input[type="text"], .text-field__input {
 	outline: none;
 }
 
-.taskInstrumental{
-	display: none;
-	position: absolute;
-	width: 200px;
-	height: 100px;
-	background: darkblue;
-	top: -10px;
-	right: -50px;
-	border-radius: 20px;
+.overlayDiv{
+
+}
+
+ .taskInstrumental{
+ 	overflow: visible;
+	visibility: hidden;
+  width: 180px;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 85%;
+  left: 120%;
+  margin-left: -150px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/*.overlayDiv:hover .taskInstrumental{
+	visibility: visible;
+  opacity: 1;
+}*/
+.taskInstrumental_visible{
+	visibility: visible;
+  opacity: 1;
+}
+
+.taskInstrumental_inner{
+	display: flex;
+	flex-direction: column;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 5px;
+}
+
+/*delete task*/
+
+.delete_flex{
+	display: flex;
+	flex-direction: row;
+	padding-top: 3px;
+	padding-bottom: 6px;
+	cursor: pointer;
+	border-bottom: 1px solid grey;
+}
+
+
+.delete_svg{
+	height: 26px;
+	width: 26px;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+.delete_task_text{
+	margin-top: 5px;
 	transition-duration: 0.3s;
 }
-.overlayDiv:hover .taskInstrumental{
-	display: block;
+.delete_flex:hover .delete_svg{
+	fill: #CB2821;
 }
-.taskInstrumental:hover{
-	display: block;
+
+/*delete subtask*/
+.delete_subtask_flex{
+	display: flex;
+	flex-direction: row;
+	padding-top: 6px;
+	padding-bottom: 3px;
+	cursor: pointer;
+}
+.delete_subtask_flex:hover .delete_svg{
+	fill: #CB2821;
 }
 
 /*board Modal*/

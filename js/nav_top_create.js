@@ -254,10 +254,48 @@ function taskModal(title, description, subtask, status) {
             ${title}
           </div>
           <div class="overlayDiv">
-          <div class="taskInstrumental">12321312</div>
+          <div class="taskInstrumental">
+            <div class="taskInstrumental_inner">
+            <div class="delete_flex">
+            
+            <svg class="delete_svg" height="137px" style="enable-background:new 0 0 98 137;" version="1.1" viewBox="0 0 98 137" width="98px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+<![CDATA[
+  .st0{fill:#EF3E42;}
+  .st1{fill:#FFFFFF;}
+  .st2{fill:none;}
+  .st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+]]>
+</style><defs/><path d="M75.6,44.8v73c0,3.4-2.8,6.2-6.2,6.2H21.3c-3.4,0-6.2-2.8-6.2-6.2v-73H75.6L75.6,44.8z M59.9,52.9v62.8h3.6V52.9H59.9 
+ L59.9,52.9z M43.6,52.9v62.8h3.6V52.9H43.6L43.6,52.9z M27.3,52.9v62.8h3.6V52.9H27.3L27.3,52.9z M31.3,27.9v-5.2 
+  c0-3.3,2.6-5.9,5.9-5.9h16.4c3.3,0,5.9,2.6,5.9,5.9v5.2h18.1c3.4,0,6.2,2.8,6.2,6.2v4.3H7V34c0-3.4,2.8-6.2,6.2-6.2H31.3L31.3,27.9z  
+   M37.2,20.8c-1,0-1.8,0.8-1.8,1.8v5.2h20.1v-5.2c0-1-0.8-1.8-1.8-1.8H37.2L37.2,20.8z"/><rect class="st2" height="137" id="_x3C_Slice_x3E__100_" 
+   width="98"/></svg> <div class="delete_task_text">Delete Task</div>
+   </div>
+
+   <div class="delete_subtask_flex">
+<svg class="delete_svg" height="137px" style="enable-background:new 0 0 98 137;" version="1.1" viewBox="0 0 98 137" width="98px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+<![CDATA[
+  .st0{fill:#EF3E42;}
+  .st1{fill:#FFFFFF;}
+  .st2{fill:none;}
+  .st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+]]>
+</style><defs/><path d="M75.6,44.8v73c0,3.4-2.8,6.2-6.2,6.2H21.3c-3.4,0-6.2-2.8-6.2-6.2v-73H75.6L75.6,44.8z M59.9,52.9v62.8h3.6V52.9H59.9 
+ L59.9,52.9z M43.6,52.9v62.8h3.6V52.9H43.6L43.6,52.9z M27.3,52.9v62.8h3.6V52.9H27.3L27.3,52.9z M31.3,27.9v-5.2 
+  c0-3.3,2.6-5.9,5.9-5.9h16.4c3.3,0,5.9,2.6,5.9,5.9v5.2h18.1c3.4,0,6.2,2.8,6.2,6.2v4.3H7V34c0-3.4,2.8-6.2,6.2-6.2H31.3L31.3,27.9z  
+   M37.2,20.8c-1,0-1.8,0.8-1.8,1.8v5.2h20.1v-5.2c0-1-0.8-1.8-1.8-1.8H37.2L37.2,20.8z"/><rect class="st2" height="137" id="_x3C_Slice_x3E__100_" 
+   width="98"/></svg>
+   <div class="delete_task_text">Delete Subtask</div>
+   </div>
+            
+
+            </div>
+
+            </div>
             <svg class="top_svg" id="Flat" height="0px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
               <path d="M144,192a16,16,0,1,1-16-16A16.01833,16.01833,0,0,1,144,192ZM128,80a16,16,0,1,0-16-16A16.01833,16.01833,0,0,0,128,80Zm0,32a16,16,0,1,0,16,16A16.01833,16.01833,0,0,0,128,112Z"/>
             </svg>
+
           </div>
         </div>
         
@@ -296,6 +334,15 @@ function taskModal(title, description, subtask, status) {
     let modalTaskDiv = `${partOne} ${partThree}`;
     taskModalPlace.insertAdjacentHTML("beforebegin", modalTaskDiv);
   }
+  
+  //три точки, показать удаление таска/сабтасков
+  //нужно собрать все и назначит эту функция, в функции реализовать функцию удаления
+  //в фун-ии удаления нужно удалять из Map таск и удалять его с html
+  let overlay_Div = document.querySelector(".overlayDiv");
+  overlay_Div.addEventListener('click', () => {
+    let el = document.querySelector('.taskInstrumental');
+    el.classList.toggle('taskInstrumental_visible');
+  });
 }
 
 function checkboxCount() {
@@ -404,10 +451,22 @@ function createBoardAndMainBlock(papkaName) {
   for(let papka of papkaColumn){
     papka.addEventListener('click', currentBoard);
   }
+
+  if(document.querySelector('.sidebar').offsetWidth < 150){
+   let papki = document.querySelectorAll('.sidebar_papka_name');
+    for(let text of papki){
+        text.style.display = "none";
+    }
+  }
+  let countPapka = nodesBoards.length;
+  document.querySelector('.sidebar_AllBoards_text').textContent = `All Boards (${countPapka})`; //All boards (count)
+    if(document.querySelector('#boardName').closest('.input_invalid')){
+      document.querySelector('#boardName').classList.remove('input_invalid');
+    }
 }
 
 // удаление таска, перемещение в другую колонку
 
-function deleteTask() {
-  let 
-}
+// function deleteTask() {
+//   let 
+// }

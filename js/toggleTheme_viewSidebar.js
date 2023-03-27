@@ -28,7 +28,9 @@ toggleButton.addEventListener('click', swapTheme);
 
 window.onload = function() {
     if(localStorage.getItem('theme') == 'css/light_theme.css'){
-        let toggle = document.querySelector('.toggle-checkbox')
+        document.body.style.display = "none";
+        setTimeout(() => document.body.style.display = "", 1); //я не знаю как, но это убирает ненужную анимацию при f5
+        let toggle = document.querySelector('.toggle-checkbox');
         toggle.checked = !toggle.checked;
         document.getElementById("theme_link").setAttribute("href", 'css/light_theme.css');
     }
@@ -38,11 +40,36 @@ let sidebar = document.querySelector(".sidebar");
 const sidebarWidth = sidebar.offsetWidth;
 
 function openSidebar() {
-    sidebar.style.width = sidebarWidth + 'px';
+    let gridMain = document.querySelector('.grid-container_closeSidebar');
+    gridMain.classList.remove('grid-container_closeSidebar');
+    gridMain.classList.add('grid-container_openSidebar');
+
+    document.querySelector('.sidebar_AllBoards_text').style.fontSize = '';
+    document.querySelector('.sidebar_title_text').style.display = "flex";
+    document.querySelector('.sidebar_toggle_box').style.display = "flex";
+    document.querySelector('.sideba_viewSidebar_text').style.display = "block";
+    document.querySelector('.sideba_viewSidebar_text').style.width = '';
+
+    let papki = document.querySelectorAll('.sidebar_papka_name');
+    for(let text of papki){
+        text.style.display = "flex";
+    }
 }
 
 function closeSidebar() {
-    sidebar.style.width = "100px";
+    let gridMain = document.querySelector('.grid-container_openSidebar');
+    gridMain.classList.remove('grid-container_openSidebar');
+    gridMain.classList.add('grid-container_closeSidebar');
+    
+    document.querySelector('.sidebar_AllBoards_text').style.fontSize = 15 + 'px';
+    document.querySelector('.sidebar_title_text').style.display = "none";
+    document.querySelector('.sidebar_toggle_box').style.display = "none";
+    document.querySelector('.sideba_viewSidebar_text').style.display = "none";
+
+    let papki = document.querySelectorAll('.sidebar_papka_name');
+    for(let text of papki){
+        text.style.display = "none";
+    }
 }
 
 let viewSidebarButton = document.querySelector('.viewSidebar_box');
