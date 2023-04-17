@@ -17,17 +17,12 @@
 
 - Dragn' Drop (криво, если честно)  
 
-![](./forReadMe_img/dnd.png)  
-
 - Переключение темы dark/light (+ localStorage, чтобы запомнить выбор пользователя)  
 
 ![](./forReadMe_img/light_theme.png)  
 
-![](./forReadMe_img/localStorage.png)  
 
 - Создавать новые папки и таски в них  
-
-![](./forReadMe_img/create_papka.png)
 *** 
 ##  Что должно быть добавлено ##
 
