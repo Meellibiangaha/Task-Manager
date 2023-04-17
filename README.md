@@ -61,10 +61,15 @@
 ##  Немного про логику ## 
 Чтобы связать таск с его модальным окном (когда хотим посмотреть содержимое и изменить/удалить его) + запихнуть в нужную папку я решил воспользоваться объектом в js Map(ключ: значение)  
 
- <let boardsMap = new Map();
-boardsMap.set(activeBoard, activeMainBlock); >  
-<//связываю: модальное окно -> блок таска
-taskMap.set(currentModalTask, currentTask); >
+```JavaScript  
+let boardsMap = new Map();
+boardsMap.set(activeBoard, activeMainBlock); 
+```  
+```JavaScript  
+//связываю: модальное окно -> блок таска
+taskMap.set(currentModalTask, currentTask); 
+```  
+
 
 Для сохранения выбранного цвета, писал функцию, которая при нажатии на кнопку меняет link стиля через  
 
